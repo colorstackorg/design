@@ -18,20 +18,22 @@ describe('<Text />', () => {
   });
 
   test('If variant is anything else, should render <p /> tag.', () => {
+    const textElements: JSX.Element[] = [
+      <Text variant="body">Hey!</Text>,
+      <Text variant="body-bold">Hey!</Text>,
+      <Text variant="body-web">Hey!</Text>,
+      <Text variant="body-web-bold">Hey!</Text>,
+      <Text variant="small">Hey!</Text>
+    ];
+
     const { container } = render(
-      <>
-        <Text variant="body">Hey!</Text>
-        <Text variant="body-bold">Hey!</Text>
-        <Text variant="body-web">Hey!</Text>
-        <Text variant="body-web-bold">Hey!</Text>
-        <Text variant="small">Hey!</Text>
-      </>
+      <>{textElements.map((textElement) => textElement)}</>
     );
 
     const elements: NodeListOf<HTMLParagraphElement> =
       container.querySelectorAll('p');
 
-    expect(elements).toHaveLength(6);
+    expect(elements).toHaveLength(textElements.length);
   });
 
   test('If color is black, then the color (in CSS) should be black.', () => {
