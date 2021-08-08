@@ -7,8 +7,6 @@ import TextUtils, {
   bodyClassName,
   bodyWebBoldClassName,
   bodyWebClassName,
-  largeTitleClassName,
-  smallBoldClassName,
   smallClassName,
   subtitleBoldClassName,
   subtitleClassName,
@@ -29,8 +27,6 @@ cases(
     },
     'Is body-web.': { input: 'body-web', output: bodyWebClassName },
     'Is body.': { input: 'body', output: bodyClassName },
-    'Is large-title.': { input: 'large-title', output: largeTitleClassName },
-    'Is small-bold.': { input: 'small-bold', output: smallBoldClassName },
     'Is small.': { input: 'small', output: smallClassName },
     'Is subtitle-bold.': {
       input: 'subtitle-bold',

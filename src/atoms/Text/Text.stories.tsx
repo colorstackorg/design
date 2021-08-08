@@ -28,15 +28,13 @@ const textArgTypes: ArgTypes = {
     defaultValue: 'body',
     options: [
       'small',
-      'small-bold',
       'body',
       'body-bold',
       'body-web',
       'body-web-bold',
       'subtitle',
       'subtitle-bold',
-      'title',
-      'large-title'
+      'title'
     ]
   }
 };

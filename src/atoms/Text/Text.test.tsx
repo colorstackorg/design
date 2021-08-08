@@ -5,21 +5,15 @@ import { Color } from '../../utils/constants';
 import Text from './Text';
 
 describe('<Text />', () => {
-  test('If variant is large-title, should render <h1 /> tag.', () => {
-    const { container } = render(<Text variant="large-title">Hey!</Text>);
+  test('If variant is title, should render <h1 /> tag.', () => {
+    const { container } = render(<Text variant="title">Hey!</Text>);
     const element: HTMLHeadingElement = container.querySelector('h1');
     expect(element).not.toBeNull();
   });
 
-  test('If variant is title, should render <h2 /> tag.', () => {
-    const { container } = render(<Text variant="title">Hey!</Text>);
-    const element: HTMLHeadingElement = container.querySelector('h2');
-    expect(element).not.toBeNull();
-  });
-
-  test('If variant is subtitle, should render <h3 /> tag.', () => {
+  test('If variant is subtitle, should render <h2 /> tag.', () => {
     const { container } = render(<Text variant="subtitle">Hey!</Text>);
-    const element: HTMLHeadingElement = container.querySelector('h3');
+    const element: HTMLHeadingElement = container.querySelector('h2');
     expect(element).not.toBeNull();
   });
 
@@ -31,7 +25,6 @@ describe('<Text />', () => {
         <Text variant="body-web">Hey!</Text>
         <Text variant="body-web-bold">Hey!</Text>
         <Text variant="small">Hey!</Text>
-        <Text variant="small-bold">Hey!</Text>
       </>
     );
 

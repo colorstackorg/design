@@ -7,10 +7,10 @@ import ButtonSpinner from './ButtonSpinner';
 
 const baseButtonClassName: string = css({
   alignItems: 'center',
+  borderRadius: Size.XXS,
   cursor: 'pointer',
   display: 'flex',
   justifyContent: 'center',
-  lineHeight: 1.5,
   paddingBottom: Size.SS,
   paddingLeft: Size.SM,
   paddingRight: Size.SM,

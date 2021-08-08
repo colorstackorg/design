@@ -6,9 +6,7 @@ type TextVariant =
   | 'body-bold'
   | 'body-web'
   | 'body-web-bold'
-  | 'large-title'
   | 'small'
-  | 'small-bold'
   | 'subtitle'
   | 'subtitle-bold'
   | 'title';
@@ -24,8 +22,6 @@ export type TextStyle = {
   fontSize: number;
   fontSizeMobile?: number;
   fontWeight: number;
-  lineHeight: number;
-  lineHeightMobile?: number;
 };
 
 export interface ITextUtils {
