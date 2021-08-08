@@ -47,10 +47,22 @@ describe('<Text />', () => {
     expect(element).toHaveStyle({ color: Color.BLACK });
   });
 
-  test('If color is red, then the color (in CSS) should be red.', () => {
-    render(<Text color="red">Hey!</Text>);
+  test('If color is error, then the color (in CSS) should be error.', () => {
+    render(<Text color="error">Hey!</Text>);
     const element: HTMLElement = screen.getByText(/Hey/i);
     expect(element).toHaveStyle({ color: Color.ERROR });
+  });
+
+  test('If color is gold, then the color (in CSS) should be gold.', () => {
+    render(<Text color="gold">Hey!</Text>);
+    const element: HTMLElement = screen.getByText(/Hey/i);
+    expect(element).toHaveStyle({ color: Color.GOLD });
+  });
+
+  test('If color is teal, then the color (in CSS) should be teal.', () => {
+    render(<Text color="teal">Hey!</Text>);
+    const element: HTMLElement = screen.getByText(/Hey/i);
+    expect(element).toHaveStyle({ color: Color.TEAL });
   });
 
   test('If color is white, then the color (in CSS) should be white.', () => {

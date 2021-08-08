@@ -18,8 +18,10 @@ const Text: React.FC<TextProps> = ({
   const baseClassName: string = css({
     color: Utils.takeFirst(
       [color === 'black', Color.BLACK],
-      [color === 'error', Color.BLACK],
-      [color === 'white', Color.BLACK]
+      [color === 'error', Color.ERROR],
+      [color === 'gold', Color.GOLD],
+      [color === 'teal', Color.TEAL],
+      [color === 'white', Color.WHITE]
     ),
     textAlign: align
   });
