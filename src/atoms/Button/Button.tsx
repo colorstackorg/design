@@ -6,10 +6,14 @@ import { ButtonProps } from './Button.types';
 import ButtonSpinner from './ButtonSpinner';
 
 const baseButtonClassName: string = css({
+  ':disabled': { cursor: 'not-allowed' },
+  ':not(:disabled):hover': { opacity: 0.8 },
   alignItems: 'center',
-  borderRadius: Size.XXS,
+  borderRadius: Size.XS,
   cursor: 'pointer',
   display: 'flex',
+  fontSize: Size.SM,
+  fontWeight: 500,
   justifyContent: 'center',
   paddingBottom: Size.SS,
   paddingLeft: Size.SM,
@@ -18,36 +22,36 @@ const baseButtonClassName: string = css({
 });
 
 const primaryButtonClassName: string = css({
-  backgroundColor: Color.BLACK,
+  ':disabled': { backgroundColor: Color.GRAY_500 },
+  backgroundColor: Color.TEAL,
   color: Color.WHITE,
   textTransform: 'uppercase'
 });
 
 const secondaryButtonClassName: string = css({
+  ':disabled': {
+    border: `1px ${Color.GRAY_500} solid`,
+    color: Color.GRAY_500
+  },
   backgroundColor: Color.WHITE,
-  border: `1px ${Color.BLACK} solid`,
-  color: Color.BLACK,
+  border: `1px ${Color.TEAL} solid`,
+  color: Color.TEAL,
   textTransform: 'uppercase'
 });
 
-const textButtonClassName: string = css({
+const tertiaryButtonClassName: string = css({
+  ':disabled': { color: Color.GRAY_500 },
   backgroundColor: Color.WHITE,
-  color: Color.BLACK,
+  color: Color.TEAL,
   padding: 0,
   textDecoration: 'underline'
 });
-
-const smallButtonClassName: string = css({ fontSize: 10 });
-const largeButtonClassName: string = css({ fontSize: 16 });
-
-const cursorNotAllowedClassName: string = css({ cursor: 'not-allowed' });
 
 const Button: React.FC<ButtonProps> = ({
   children,
   className: otherClassName,
   disabled,
   loading,
-  size = 'large',
   type,
   variant = 'primary',
   ...props
@@ -59,10 +63,7 @@ const Button: React.FC<ButtonProps> = ({
     baseButtonClassName,
     { [primaryButtonClassName]: variant === 'primary' },
     { [secondaryButtonClassName]: variant === 'secondary' },
-    { [textButtonClassName]: variant === 'text' },
-    { [smallButtonClassName]: size === 'small' },
-    { [largeButtonClassName]: size === 'large' },
-    { [cursorNotAllowedClassName]: disabled || loading },
+    { [tertiaryButtonClassName]: variant === 'tertiary' },
     otherClassName
   );
 
@@ -75,7 +76,7 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       {children}
-      <ButtonSpinner loading={loading} size={size as never} variant={variant} />
+      <ButtonSpinner loading={loading} variant={variant} />
     </button>
   );
 };

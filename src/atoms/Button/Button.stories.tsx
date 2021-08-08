@@ -17,20 +17,20 @@ export const ButtonStory: Story<ButtonProps> = ({ variant, ...args }) => {
 ButtonStory.storyName = 'Button';
 
 const buttonArgTypes: ArgTypes = {
+  disabled: {
+    control: { type: 'inline-radio' },
+    defaultValue: false,
+    options: [false, true]
+  },
   loading: {
     control: { type: 'inline-radio' },
     defaultValue: false,
     options: [false, true]
   },
-  size: {
-    control: { type: 'inline-radio' },
-    defaultValue: 'large',
-    options: ['small', 'large']
-  },
   variant: {
     control: { type: 'inline-radio' },
     defaultValue: 'primary',
-    options: ['primary', 'secondary', 'text']
+    options: ['primary', 'secondary', 'tertiary']
   }
 };
 

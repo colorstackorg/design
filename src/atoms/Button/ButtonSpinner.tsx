@@ -6,16 +6,17 @@ import { Color, Size } from '../../utils/constants';
 import Utils from '../../utils/Utils';
 import { ButtonProps } from './Button.types';
 
-const ButtonSpinner: React.FC<
-  Pick<ButtonProps, 'loading' | 'size' | 'variant'>
-> = ({ loading, size, variant }) => {
+const ButtonSpinner: React.FC<Pick<ButtonProps, 'loading' | 'variant'>> = ({
+  loading,
+  variant
+}) => {
   // If the button isn't in a loading state or the button is a text button,
   // don't show the spinner!
-  if (!loading || variant === 'text') return null;
+  if (!loading || variant === 'tertiary') return null;
 
   const color: string = Utils.takeFirst(
     [variant === 'primary', Color.WHITE],
-    [variant === 'secondary', Color.BLACK]
+    [variant === 'secondary', Color.GRAY_500]
   );
 
   const borderOpacity: number = Utils.takeFirst(
@@ -39,10 +40,10 @@ const ButtonSpinner: React.FC<
     borderRadius: '50%',
     borderStyle: 'solid',
     borderTopColor: color,
-    borderWidth: size === 'large' ? 3 : 2,
-    height: size === 'large' ? Size.SM : Size.SS,
-    marginLeft: size === 'large' ? Size.SM : Size.SS,
-    width: size === 'large' ? Size.SM : Size.SS
+    borderWidth: 3,
+    height: Size.SM,
+    marginLeft: Size.SM,
+    width: Size.SM
   });
 
   return (
