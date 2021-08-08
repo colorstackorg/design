@@ -1,7 +1,7 @@
-import './assets/fonts/Gotham-Bold.ttf';
-import './assets/fonts/Gotham-Book.ttf';
-import './assets/fonts/Gotham-Light.ttf';
-import './assets/fonts/Gotham-Medium.ttf';
+import './assets/fonts/Gotham-Bold.otf';
+import './assets/fonts/Gotham-Book.otf';
+import './assets/fonts/Gotham-Light.otf';
+import './assets/fonts/Gotham-Medium.otf';
 
 import Button from './atoms/Button';
 import Input from './atoms/Input';

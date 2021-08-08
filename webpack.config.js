@@ -57,11 +57,11 @@ module.exports = {
       },
 
       {
-        // Handles fonts: .ttf
+        // Handles font files.
         exclude: /node_modules/,
         loader: 'file-loader',
         options: { context: 'src', name: 'assets/fonts/[name].[ext]' },
-        test: /\.(ttf)$/
+        test: /\.(otf|ttf)$/
       }
     ]
   },
