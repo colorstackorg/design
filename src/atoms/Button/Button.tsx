@@ -10,7 +10,7 @@ const baseButtonClassName: string = css({
   ':disabled': { cursor: 'not-allowed' },
   ':not(:disabled):hover': { opacity: 0.8 },
   alignItems: 'center',
-  borderRadius: Size.SS,
+  borderRadius: 6,
   cursor: 'pointer',
   display: 'flex',
   fontSize: Size.SM,
