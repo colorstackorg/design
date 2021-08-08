@@ -1,4 +1,4 @@
-import create, { UseStore } from 'zustand';
+import createStore, { UseStore } from 'zustand';
 import createContextStore from 'zustand/context';
 
 import { FormItem, FormOptions, FormState, FormStaticItem } from './Form.types';
@@ -8,8 +8,8 @@ const defaultFormOptions: FormOptions = {
   textVariant: 'body-web'
 };
 
-export const createFormStore = (options: FormOptions): UseStore<FormState> =>
-  create((set, get) => {
+export const createFormStore = (options: FormOptions): UseStore<FormState> => {
+  const store: UseStore<FormState> = createStore<FormState>((set, get) => {
     /**
      * Updates the item with the given name with all of the new properties given
      * to initializeField.
@@ -105,6 +105,9 @@ export const createFormStore = (options: FormOptions): UseStore<FormState> =>
       validateForm
     };
   });
+
+  return store;
+};
 
 export const {
   Provider: FormProvider,
