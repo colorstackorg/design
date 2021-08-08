@@ -1,0 +1,102 @@
+@font-face {
+  font-family: Gotham;
+  src: url('./assets/fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url('./assets/fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url('./assets/fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url('./assets/fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+body {
+  line-height: 1.25;
+}
+
+a,
+button,
+h1,
+h2,
+h3,
+input,
+p,
+span {
+  font-family: Gotham;
+}
+
+a,
+article,
+aside,
+body,
+button,
+canvas,
+caption,
+div,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5 h6,
+header,
+html,
+img,
+input,
+label,
+li,
+nav,
+ol,
+p,
+section,
+span,
+table,
+tbody,
+td,
+th,
+tr,
+ul {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+path {
+  fill: currentColor;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

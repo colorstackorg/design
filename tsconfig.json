@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "declaration": true, // Generates .d.ts files for every corresponding TypeScript file.
+    "esModuleInterop": true,
+    "jsx": "react", // Allows .jsx to be used in the application.
+    "module": "commonjs",
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "target": "es2018"
+  },
+  "include": ["src", "./jest.config.ts", "./jest.setup.ts"],
+  "typeRoots": ["./node_modules/@types", "./src/types.d.ts"]
+}
