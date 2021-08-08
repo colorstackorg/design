@@ -16,7 +16,7 @@ const FormFieldErrorMessage: React.FC = () => {
   });
 
   return (
-    <Text className={className} color="red">
+    <Text className={className} color="error">
       {error}
     </Text>
   );

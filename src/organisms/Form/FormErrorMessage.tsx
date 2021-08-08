@@ -17,7 +17,7 @@ const FormErrorMessage: React.FC<TextProps> = ({
   const className: string = cx(otherClassName);
 
   return (
-    <Text className={className} color="red" variant="body" {...props}>
+    <Text className={className} color="error" variant="body" {...props}>
       {error}
     </Text>
   );
