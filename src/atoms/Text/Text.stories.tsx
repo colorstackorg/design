@@ -17,7 +17,7 @@ const textArgTypes: ArgTypes = {
   color: {
     control: { type: 'inline-radio' },
     defaultValue: 'black',
-    options: ['black', 'salmon', 'white']
+    options: ['black', 'white']
   },
   text: {
     control: { type: 'text' },

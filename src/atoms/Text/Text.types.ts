@@ -1,6 +1,6 @@
 type TextAlign = 'left' | 'center' | 'right';
 type TextAs = 'h1' | 'h2' | 'h3' | 'p' | 'span';
-type TextColor = 'black' | 'salmon' | 'red' | 'white';
+type TextColor = 'black' | 'error' | 'white';
 type TextVariant =
   | 'body'
   | 'body-bold'
