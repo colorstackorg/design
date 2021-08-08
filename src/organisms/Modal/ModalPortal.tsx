@@ -1,7 +1,7 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 
-import { useModal } from './Modal.state';
+import useModal from './Modal.state';
 import ModalContainer from './ModalContainer';
 import ModalShader from './ModalShader';
 

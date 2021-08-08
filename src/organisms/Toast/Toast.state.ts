@@ -3,7 +3,7 @@ import create from 'zustand';
 import Utils from '../../utils/Utils';
 import { Toast, ToastState } from './Toast.types';
 
-export const useToast = create<ToastState>((set, get) => {
+const useToast = create<ToastState>((set, get) => {
   /**
    * Removes the toast item with the given ID from queue of items.
    * @param id - ID of the toast item.
@@ -52,4 +52,4 @@ export const useToast = create<ToastState>((set, get) => {
   return state;
 });
 
-export const { showToast } = useToast.getState();
+export default useToast;

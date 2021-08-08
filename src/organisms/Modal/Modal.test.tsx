@@ -4,8 +4,9 @@ import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Text from '../../atoms/Text/Text';
 import Modal from './Modal';
-import { showModal, useModal } from './Modal.state';
+import useModal from './Modal.state';
 import { ModalState } from './Modal.types';
+import ModalUtils from './Modal.utils';
 import ModalPortal from './ModalPortal';
 
 const initialState: ModalState = useModal.getState();
@@ -18,7 +19,7 @@ describe('<Modal />', () => {
 
   test('The modal should return after calling showModal().', () => {
     act(() => {
-      showModal(
+      ModalUtils.showModal(
         <Modal>
           <Text>This an example of a text component.</Text>
         </Modal>
@@ -31,7 +32,7 @@ describe('<Modal />', () => {
 
   test('If the user clicks the "close modal" button, it should close the modal.', async () => {
     act(() => {
-      showModal(
+      ModalUtils.showModal(
         <Modal>
           <Text>This an example of a text component.</Text>
         </Modal>
@@ -52,7 +53,7 @@ describe('<Modal />', () => {
 
   test('If the user clicks anywhere on the shader background, it should close the modal.', async () => {
     act(() => {
-      showModal(
+      ModalUtils.showModal(
         <Modal>
           <Text>This an example of a text component.</Text>
         </Modal>

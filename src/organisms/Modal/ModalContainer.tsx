@@ -3,7 +3,7 @@ import { animated, Transition } from 'react-spring';
 
 import { css } from '@emotion/css';
 import { Size } from '../../utils/constants';
-import { useModal } from './Modal.state';
+import useModal from './Modal.state';
 
 const ModalContainer: React.FC = ({ children }) => {
   const show: boolean = useModal((state) => state.isOpen);

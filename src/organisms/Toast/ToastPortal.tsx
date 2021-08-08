@@ -4,7 +4,7 @@ import { TransitionFn, useTransition } from 'react-spring';
 
 import { css } from '@emotion/css';
 import Toast from './Toast';
-import { useToast } from './Toast.state';
+import useToast from './Toast.state';
 import { Toast as ToastItem } from './Toast.types';
 
 const ToastPortal: React.FC = () => {

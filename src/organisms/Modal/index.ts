@@ -1,6 +1,6 @@
 import Modal from './Modal';
-import { closeModal, showModal } from './Modal.state';
+import ModalUtils from './Modal.utils';
 import ModalPortal from './ModalPortal';
 
-export { ModalPortal, closeModal, showModal };
+export { ModalPortal, ModalUtils };
 export default Modal;

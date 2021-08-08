@@ -1,4 +1,4 @@
-import { showToast } from './Toast.state';
+import ToastUtils from './Toast.utils';
 import ToastPortal from './ToastPortal';
 
-export { showToast, ToastPortal };
+export { ToastPortal, ToastUtils };

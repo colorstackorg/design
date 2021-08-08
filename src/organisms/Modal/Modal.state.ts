@@ -2,7 +2,7 @@ import create from 'zustand';
 
 import { ModalState } from './Modal.types';
 
-export const useModal = create<ModalState>((set) => {
+const useModal = create<ModalState>((set) => {
   const state: ModalState = {
     closeModal: () => set({ isOpen: false }),
     content: null,
@@ -13,4 +13,4 @@ export const useModal = create<ModalState>((set) => {
   return state;
 });
 
-export const { closeModal, showModal } = useModal.getState();
+export default useModal;

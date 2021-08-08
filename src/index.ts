@@ -14,15 +14,14 @@ import Form, {
   FormSubmitButton,
   useForm
 } from './organisms/Form';
-import Modal, { closeModal, ModalPortal, showModal } from './organisms/Modal';
-import { showToast, ToastPortal } from './organisms/Toast';
+import Modal, { ModalPortal, ModalUtils } from './organisms/Modal';
+import { ToastPortal, ToastUtils } from './organisms/Toast';
 import ColorUtils from './utils/ColorUtils';
 import { Color, MediaQuery, Size } from './utils/constants';
 import Utils from './utils/Utils';
 
 export {
   Button,
-  closeModal,
   Color,
   ColorUtils,
   Form,
@@ -35,11 +34,11 @@ export {
   MediaQuery,
   Modal,
   ModalPortal,
-  showModal,
-  showToast,
+  ModalUtils,
   Size,
   Text,
   ToastPortal,
+  ToastUtils,
   useBreakpoint,
   Utils
 };

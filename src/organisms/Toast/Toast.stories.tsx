@@ -2,13 +2,13 @@ import React from 'react';
 
 import { ArgTypes, Meta, Story } from '@storybook/react';
 import Button from '../../atoms/Button';
-import { showToast } from './Toast.state';
 import { Toast } from './Toast.types';
+import ToastUtils from './Toast.utils';
 import ToastPortal from './ToastPortal';
 
 export const ToastStory: Story<Pick<Toast, 'success'>> = ({ success }) => {
   const onClick = (): void => {
-    showToast({
+    ToastUtils.showToast({
       message: success
         ? 'This is a successful message.'
         : 'This is a failure message.',

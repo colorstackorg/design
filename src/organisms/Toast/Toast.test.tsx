@@ -2,8 +2,9 @@ import React from 'react';
 
 import { act, render, screen } from '@testing-library/react';
 import { Color } from '../../utils/constants';
-import { showToast, useToast } from './Toast.state';
+import useToast from './Toast.state';
 import { ToastState } from './Toast.types';
+import ToastUtils from './Toast.utils';
 import ToastPortal from './ToastPortal';
 
 const initialState: ToastState = useToast.getState();
@@ -16,7 +17,7 @@ describe('<Toast />', () => {
 
   test('Success toast should render with green.', () => {
     act(() => {
-      showToast({
+      ToastUtils.showToast({
         message: 'Test Message',
         success: true
       });
@@ -29,7 +30,7 @@ describe('<Toast />', () => {
 
   test('Error toast should render with red.', () => {
     act(() => {
-      showToast({
+      ToastUtils.showToast({
         message: 'Test Message',
         success: false
       });
@@ -42,12 +43,12 @@ describe('<Toast />', () => {
 
   test('Multiple toasts should be able to render at the same time.', () => {
     act(() => {
-      showToast({
+      ToastUtils.showToast({
         message: 'Test Message',
         success: true
       });
 
-      showToast({
+      ToastUtils.showToast({
         message: 'Test Message',
         success: false
       });

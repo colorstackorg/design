@@ -3,7 +3,7 @@ import { animated, SpringValue } from 'react-spring';
 
 import { css } from '@emotion/css';
 import { Color } from '../../utils/constants';
-import { useToast } from './Toast.state';
+import useToast from './Toast.state';
 import { Toast as ToastItem } from './Toast.types';
 
 type ToastProps = ToastItem & { transform: SpringValue<string> };

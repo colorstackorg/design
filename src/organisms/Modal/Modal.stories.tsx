@@ -4,12 +4,12 @@ import { Meta, Story } from '@storybook/react';
 import Button from '../../atoms/Button';
 import Text from '../../atoms/Text/index';
 import Modal from './Modal';
-import { showModal } from './Modal.state';
+import ModalUtils from './Modal.utils';
 import ModalPortal from './ModalPortal';
 
 export const ModalStory: Story = () => {
   const onClick = (): void => {
-    showModal(
+    ModalUtils.showModal(
       <Modal>
         <Text variant="large-title">Hello World!</Text>
         <Text variant="large-title">Hello World!</Text>

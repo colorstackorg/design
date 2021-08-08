@@ -5,9 +5,8 @@
     "jsx": "react", // Allows .jsx to be used in the application.
     "module": "commonjs",
     "outDir": "./dist",
-    "resolveJsonModule": true,
     "target": "es2018"
   },
-  "include": ["src", "./jest.config.ts", "./jest.setup.ts"],
+  "include": ["src", "./jest.*.ts"],
   "typeRoots": ["./node_modules/@types", "./src/types.d.ts"]
 }

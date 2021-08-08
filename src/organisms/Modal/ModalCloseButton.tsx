@@ -3,7 +3,7 @@ import { X as XIcon } from 'react-feather';
 
 import { css } from '@emotion/css';
 import { Size } from '../../utils/constants';
-import { closeModal } from './Modal.state';
+import ModalUtils from './Modal.utils';
 
 const ModalCloseButton: React.FC = () => {
   const className: string = css({
@@ -19,7 +19,7 @@ const ModalCloseButton: React.FC = () => {
     <button
       aria-label="Close Modal Button"
       className={className}
-      onClick={closeModal}
+      onClick={ModalUtils.closeModal}
       type="button"
     >
       <XIcon />

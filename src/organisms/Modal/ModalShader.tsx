@@ -3,7 +3,8 @@ import { animated, Transition } from 'react-spring';
 
 import { css } from '@emotion/css';
 import { Color } from '../../utils/constants';
-import { closeModal, useModal } from './Modal.state';
+import useModal from './Modal.state';
+import ModalUtils from './Modal.utils';
 
 const ModalShader: React.FC = () => {
   const show: boolean = useModal((state) => state.isOpen);
@@ -32,7 +33,7 @@ const ModalShader: React.FC = () => {
           <animated.div
             aria-label="Modal Shader"
             role="button"
-            onClick={closeModal}
+            onClick={ModalUtils.closeModal}
             className={className}
             tabIndex={0}
             style={style}
