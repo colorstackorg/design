@@ -7,7 +7,6 @@ import TextUtils from './Text.utils';
 
 const colorBlack: string = css({ color: Color.BLACK });
 const colorRed: string = css({ color: Color.ERROR });
-const colorSalmon: string = css({ color: Color.SALMON });
 const colorWhite: string = css({ color: Color.WHITE });
 
 const textAlignCenter: string = css({ textAlign: 'center' });
@@ -26,7 +25,6 @@ const Text: React.FC<TextProps> = ({
   const className: string = cx(
     { [colorBlack]: color === 'black' },
     { [colorRed]: color === 'red' },
-    { [colorSalmon]: color === 'salmon' },
     { [colorWhite]: color === 'white' },
     { [textAlignCenter]: align === 'center' },
     { [textAlignLeft]: align === 'left' },

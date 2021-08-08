@@ -53,12 +53,6 @@ describe('<Text />', () => {
     expect(element).toHaveStyle({ color: Color.ERROR });
   });
 
-  test('If color is salmon, then the color (in CSS) should be salmon.', () => {
-    render(<Text color="salmon">Hey!</Text>);
-    const element: HTMLElement = screen.getByText(/Hey/i);
-    expect(element).toHaveStyle({ color: Color.SALMON });
-  });
-
   test('If color is white, then the color (in CSS) should be white.', () => {
     render(<Text color="white">Hey!</Text>);
     const element: HTMLElement = screen.getByText(/Hey/i);

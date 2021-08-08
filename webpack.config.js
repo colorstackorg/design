@@ -33,7 +33,7 @@ module.exports = {
     // Tells us about any unused/"dead" code in our repository.
     new UnusedWebpackPlugin({
       directories: [path.join(__dirname, 'src')],
-      exclude: ['*.test.ts*', '*.stories.tsx']
+      exclude: ['*.test.ts*', '*.stories.tsx', 'TestUtils.ts']
     })
   ],
 

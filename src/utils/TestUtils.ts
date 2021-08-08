@@ -1,5 +1,10 @@
 import { act } from '@testing-library/react';
 
+export type TestObject<T = unknown, S = unknown> = {
+  input: T;
+  output: S;
+};
+
 interface ITestUtils {
   updateDocumentWidth: (width: number) => void;
 }

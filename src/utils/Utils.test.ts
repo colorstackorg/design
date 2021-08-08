@@ -1,6 +1,6 @@
 import cases from 'jest-in-case';
 
-import { TestObject } from './types';
+import { TestObject } from './TestUtils';
 import Utils from './Utils';
 
 cases(

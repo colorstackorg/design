@@ -1,6 +1,6 @@
 import cases from 'jest-in-case';
 
-import { TestObject } from '../../utils/types';
+import { TestObject } from '../../utils/TestUtils';
 import { TextProps } from './Text.types';
 import TextUtils, {
   bodyBoldClassName,
