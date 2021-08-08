@@ -66,6 +66,7 @@ const Button: React.FC<ButtonProps> = ({
   className: otherClassName,
   disabled,
   loading,
+  loadingText,
   type,
   variant = 'primary',
   ...props
@@ -89,7 +90,7 @@ const Button: React.FC<ButtonProps> = ({
       type={castedType}
       {...props}
     >
-      {children}
+      {loading && !!loadingText ? loadingText : children}
       <ButtonSpinner loading={loading} variant={variant} />
     </button>
   );
