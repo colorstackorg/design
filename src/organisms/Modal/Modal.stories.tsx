@@ -11,10 +11,10 @@ export const ModalStory: Story = () => {
   const onClick = (): void => {
     ModalUtils.showModal(
       <Modal>
-        <Text variant="large-title">Hello World!</Text>
-        <Text variant="large-title">Hello World!</Text>
-        <Text variant="large-title">Hello World!</Text>
-        <Text variant="large-title">Hello World!</Text>
+        <Text variant="title">Hello World!</Text>
+        <Text variant="title">Hello World!</Text>
+        <Text variant="title">Hello World!</Text>
+        <Text variant="title">Hello World!</Text>
       </Modal>
     );
   };

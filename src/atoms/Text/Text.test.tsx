@@ -18,22 +18,27 @@ describe('<Text />', () => {
   });
 
   test('If variant is anything else, should render <p /> tag.', () => {
-    const textElements: JSX.Element[] = [
-      <Text variant="body">Hey!</Text>,
-      <Text variant="body-bold">Hey!</Text>,
-      <Text variant="body-web">Hey!</Text>,
-      <Text variant="body-web-bold">Hey!</Text>,
-      <Text variant="small">Hey!</Text>
+    const TextComponents: React.FC[] = [
+      () => <Text variant="body">Hey!</Text>,
+      () => <Text variant="body-bold">Hey!</Text>,
+      () => <Text variant="body-web">Hey!</Text>,
+      () => <Text variant="body-web-bold">Hey!</Text>,
+      () => <Text variant="small">Hey!</Text>
     ];
 
     const { container } = render(
-      <>{textElements.map((textElement) => textElement)}</>
+      <>
+        {TextComponents.map((TextComponent, i: number) => {
+          // eslint-disable-next-line react/no-array-index-key
+          return <TextComponent key={i} />;
+        })}
+      </>
     );
 
     const elements: NodeListOf<HTMLParagraphElement> =
       container.querySelectorAll('p');
 
-    expect(elements).toHaveLength(textElements.length);
+    expect(elements).toHaveLength(TextComponents.length);
   });
 
   test('If color is black, then the color (in CSS) should be black.', () => {
