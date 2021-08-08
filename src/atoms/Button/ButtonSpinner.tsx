@@ -10,7 +10,7 @@ const ButtonSpinner: React.FC<Pick<ButtonProps, 'loading' | 'variant'>> = ({
   loading,
   variant
 }) => {
-  // If the button isn't in a loading state or the button is a text button,
+  // If the button isn't in a loading state or the button is a tertiary button,
   // don't show the spinner!
   if (!loading || variant === 'tertiary') return null;
 

@@ -4,13 +4,13 @@ import { ITextUtils, TextProps, TextStyle } from './Text.types';
 
 const textStyles: Record<TextProps['variant'], TextStyle> = {
   body: { fontSize: 16, fontWeight: 400 },
-  'body-bold': { fontSize: 16, fontWeight: 750 },
+  'body-bold': { fontSize: 16, fontWeight: 500 },
   'body-web': { fontSize: 20, fontSizeMobile: 16, fontWeight: 400 },
-  'body-web-bold': { fontSize: 20, fontSizeMobile: 16, fontWeight: 750 },
+  'body-web-bold': { fontSize: 20, fontSizeMobile: 16, fontWeight: 500 },
   small: { fontSize: 12, fontWeight: 400 },
   subtitle: { fontSize: 26, fontSizeMobile: 20, fontWeight: 400 },
-  'subtitle-bold': { fontSize: 26, fontSizeMobile: 20, fontWeight: 750 },
-  title: { fontSize: 42, fontSizeMobile: 26, fontWeight: 750 }
+  'subtitle-bold': { fontSize: 26, fontSizeMobile: 20, fontWeight: 700 },
+  title: { fontSize: 42, fontSizeMobile: 26, fontWeight: 700 }
 };
 
 /**
@@ -24,9 +24,7 @@ const makeTextClassName = (variant: TextProps['variant']): string => {
   return css({
     fontSize,
     fontWeight,
-    [MediaQuery.MOBILE]: {
-      ...(fontSizeMobile ? { fontSize: fontSizeMobile } : {})
-    }
+    [MediaQuery.MOBILE]: { fontSize: fontSizeMobile ?? fontSize }
   });
 };
 
