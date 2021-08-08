@@ -1,6 +1,6 @@
 type TextAlign = 'left' | 'center' | 'right';
 
-type TextAs = 'h1' | 'h2' | 'h3' | 'p' | 'span';
+type TextAs = 'h1' | 'h2' | 'h3' | 'label' | 'p' | 'span';
 
 type TextColor = 'black' | 'error' | 'gold' | 'teal' | 'white';
 
@@ -14,7 +14,7 @@ type TextVariant =
   | 'subtitle-bold'
   | 'title';
 
-export type TextProps = React.HTMLProps<HTMLParagraphElement> & {
+export type TextProps = React.HTMLProps<HTMLElement> & {
   align?: TextAlign;
   as?: TextAs;
   color?: TextColor;

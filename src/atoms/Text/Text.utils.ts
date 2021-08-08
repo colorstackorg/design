@@ -51,7 +51,7 @@ const textClassNames: Record<TextProps['variant'], string> = {
 const getTextElement = (
   variant: TextProps['variant'],
   textAs?: TextProps['as']
-): keyof Pick<JSX.IntrinsicElements, 'h1' | 'h2' | 'h3' | 'p' | 'span'> => {
+): keyof Pick<JSX.IntrinsicElements, TextProps['as']> => {
   if (textAs) return textAs;
 
   switch (variant) {

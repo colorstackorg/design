@@ -1,16 +1,21 @@
 import React from 'react';
 
 import { css, cx } from '@emotion/css';
+import { InputVariant } from '../../atoms/Input/Input.types';
+import Text from '../../atoms/Text';
 import { Color, Size } from '../../utils/constants';
+import { useForm } from './Form.state';
 import { useFormField } from './FormField.state';
-import FormFieldLabelText from './FormFieldLabelText';
 
 type FormFieldLabelProps = React.HTMLProps<HTMLDivElement>;
 
 const FormFieldLabel: React.FC<FormFieldLabelProps> = ({
-  className: otherClassName,
-  ...props
+  className: otherClassName
 }) => {
+  const textVariant: InputVariant = useForm((state) => {
+    return state.options?.textVariant;
+  });
+
   const error: boolean = useFormField((state) => !!state.error);
   const label: string = useFormField((state) => state.label);
 
@@ -35,9 +40,9 @@ const FormFieldLabel: React.FC<FormFieldLabelProps> = ({
   );
 
   return (
-    <div className={className} {...props}>
-      <FormFieldLabelText>{label}</FormFieldLabelText>
-    </div>
+    <Text as="label" className={className} variant={textVariant}>
+      {label}
+    </Text>
   );
 };
 

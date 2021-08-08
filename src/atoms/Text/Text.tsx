@@ -36,6 +36,8 @@ const Text: React.FC<TextProps> = ({
     TextUtils.getTextElement(variant, as);
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore b/c we know that the text elements have the same signature.
     <TextElement className={className} {...props}>
       {children}
     </TextElement>
