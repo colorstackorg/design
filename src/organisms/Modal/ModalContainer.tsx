@@ -9,8 +9,8 @@ const ModalContainer: React.FC = ({ children }) => {
   const show: boolean = useModal((state) => state.isOpen);
 
   const className: string = css({
-    borderTopLeftRadius: Size.XXS,
-    borderTopRightRadius: Size.XXS,
+    borderTopLeftRadius: Size.SS,
+    borderTopRightRadius: Size.SS,
     left: 0,
     maxHeight: `calc(100vh - ${Size.XL}px)`,
     overflow: 'scroll',
