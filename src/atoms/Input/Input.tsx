@@ -20,7 +20,7 @@ const Input: React.FC<InputProps> = ({
 
   const baseClassName: string = css({
     ...(fill && { width: '-webkit-fill-available' }),
-    '::placeholder': { color: Color.GRAY },
+    '::placeholder': { color: Color.GRAY_300 },
     borderBottomColor: error ? Color.ERROR : Color.BLACK,
     borderBottomStyle: 'solid',
     borderBottomWidth: 1

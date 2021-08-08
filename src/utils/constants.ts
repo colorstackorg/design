@@ -10,7 +10,6 @@ export enum Color {
   BLACK = '#000000',
   ERROR = '#F02834',
   GOLD = '#FCB432',
-  GRAY = '#C4C4C4',
   GRAY_100 = '#E1E1E1',
   GRAY_300 = '#B1B1B1',
   GRAY_500 = '#7E7E7E',
