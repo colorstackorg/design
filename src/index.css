@@ -99,10 +99,6 @@ ul {
   list-style: none;
 }
 
-path {
-  fill: currentColor;
-}
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
