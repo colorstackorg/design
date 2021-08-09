@@ -9,6 +9,7 @@ import Text from './atoms/Text';
 import useBreakpoint from './hooks/useBreakpoint';
 import Form, {
   FormErrorMessage,
+  FormField,
   FormShortText,
   FormState,
   FormSubmitButton,
@@ -26,6 +27,7 @@ export {
   ColorUtils,
   Form,
   FormErrorMessage,
+  FormField,
   FormShortText,
   FormState,
   FormSubmitButton,
