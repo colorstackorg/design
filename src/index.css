@@ -86,7 +86,8 @@ a {
 }
 
 button,
-input {
+input,
+textarea {
   background: none;
   border: none;
   box-shadow: none;
@@ -105,4 +106,8 @@ path {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+textarea {
+  resize: none;
 }
