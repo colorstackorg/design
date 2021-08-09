@@ -3,6 +3,7 @@ import { useForm } from './Form.state';
 import { FormState } from './Form.types';
 import FormErrorMessage from './FormErrorMessage';
 import FormField from './FormField';
+import { useFormField } from './FormField.state';
 import FormShortText from './FormShortText';
 import FormSubmitButton from './FormSubmitButton';
 
@@ -12,7 +13,8 @@ export {
   FormShortText,
   FormState,
   FormSubmitButton,
-  useForm
+  useForm,
+  useFormField
 };
 
 export default Form;
