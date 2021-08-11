@@ -26,7 +26,7 @@ const baseButtonClassName: string = css({
 const primaryButtonClassName: string = css({
   ':active': { boxShadow: `inset 0 2px 8px ${Color.GRAY_900}` },
   ':disabled': { backgroundColor: Color.GRAY_500 },
-  ':not(:active):focus': { boxShadow: `0px 0px 4px ${Color.TEAL}` },
+  ':not(:active):focus-visible': { boxShadow: `0px 0px 4px ${Color.TEAL}` },
   backgroundColor: Color.TEAL,
   color: Color.WHITE,
   textTransform: 'uppercase'
@@ -38,7 +38,7 @@ const secondaryButtonClassName: string = css({
     border: `1px ${Color.GRAY_500} solid`,
     color: Color.GRAY_500
   },
-  ':not(:active):focus': { boxShadow: `0px 0px 4px ${Color.TEAL}` },
+  ':not(:active):focus-visible': { boxShadow: `0px 0px 4px ${Color.TEAL}` },
   backgroundColor: Color.WHITE,
   border: `1px ${Color.TEAL} solid`,
   color: Color.TEAL,
@@ -48,7 +48,7 @@ const secondaryButtonClassName: string = css({
 const tertiaryButtonClassName: string = css({
   ':active': { boxShadow: `inset 0 2px 4px ${Color.GRAY_300}` },
   ':disabled': { color: Color.GRAY_500 },
-  ':not(:active):focus': {
+  ':not(:active):focus-visible': {
     backgroundColor: Color.TEAL + ColorUtils.transparency[0.1]
   },
   ':not(:disabled):hover': {
