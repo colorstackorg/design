@@ -14,6 +14,7 @@ export type FormFieldProps = React.HTMLProps<HTMLDivElement> &
 const FormFieldContent: React.FC<FormFieldProps> = ({
   children,
   className: otherClassName,
+  hideError = false,
   label,
   name,
   required,
@@ -49,7 +50,7 @@ const FormFieldContent: React.FC<FormFieldProps> = ({
     <div className={className} ref={ref}>
       <FormFieldLabel />
       {children}
-      <FormFieldErrorMessage />
+      {!hideError && <FormFieldErrorMessage />}
     </div>
   );
 };

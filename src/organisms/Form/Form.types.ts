@@ -26,6 +26,7 @@ export type FormItemProps = Pick<
   'label' | 'name' | 'placeholder' | 'required' | 'validation'
 > & {
   className?: string;
+  hideError?: boolean;
   value?: string;
 };
 
