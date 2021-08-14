@@ -13,8 +13,12 @@ const FormSubmitButton: React.FC<FormSubmitButtonProps> = ({
   invisible = false,
   ...props
 }) => {
+  const isValid: boolean = useForm((state) => state.isValid);
   const loading: boolean = useForm((state) => state.loading);
-  const invisibleClassName: string = css({ display: 'none' });
+
+  const invisibleClassName: string = css({
+    display: 'none'
+  });
 
   const className: string = cx(
     { [invisibleClassName]: invisible },
@@ -22,7 +26,13 @@ const FormSubmitButton: React.FC<FormSubmitButtonProps> = ({
   );
 
   return (
-    <Button loading={loading} className={className} type="submit" {...props}>
+    <Button
+      disabled={!isValid}
+      loading={loading}
+      className={className}
+      type="submit"
+      {...props}
+    >
       {children}
     </Button>
   );

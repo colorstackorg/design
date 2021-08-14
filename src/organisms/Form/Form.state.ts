@@ -67,7 +67,7 @@ export const createFormStore = (options: FormOptions): UseStore<FormState> => {
      * iterates through all of the form items, and if there is an item that
      * produces a validation error, we store that error message on the item.
      */
-    const validateForm = (): boolean => {
+    const validateForm = (updateErrors = true): boolean => {
       const { items } = get();
 
       // Tracks whether or not there were any errors at all.
@@ -78,18 +78,21 @@ export const createFormStore = (options: FormOptions): UseStore<FormState> => {
         // if any at all.
         const error: string = FormUtils.validateFormField(item);
 
-        // Store that error message in the form item itself.
-        items[item.name].error = error;
+        // If we allow modification, then store that error message in the form
+        // item itself.
+        if (updateErrors) items[item.name].error = error;
 
         // If there was an error, let's keep track of that so we can set an
         // error message on the entire form (not just this specific item).
         if (error && !hasError) hasError = true;
       });
 
-      set({
-        error: hasError ? 'Please fix the errors and try again.' : null,
-        items
-      });
+      if (updateErrors) {
+        set({
+          error: hasError ? 'Please fix the errors and try again.' : null,
+          items
+        });
+      }
 
       return !hasError;
     };
@@ -97,6 +100,7 @@ export const createFormStore = (options: FormOptions): UseStore<FormState> => {
     return {
       error: '',
       initializeField,
+      isValid: validateForm(false),
       items: {},
       loading: false,
       options: { ...defaultFormOptions, ...options },
