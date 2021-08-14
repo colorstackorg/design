@@ -47,8 +47,7 @@ export type FormState<T = Record<string, unknown>> = {
     name: FormItem['name'],
     item: Omit<FormStaticItem, 'name'>
   ) => void;
-  isValid: boolean;
   set: SetState<Omit<FormState<T>, 'set'>>;
   setValue: (name: FormItem['name'], value: FormItem['value']) => void;
-  validateForm: () => boolean;
+  validateForm: (updateErrors?: boolean) => boolean;
 };

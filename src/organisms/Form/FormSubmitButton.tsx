@@ -13,8 +13,8 @@ const FormSubmitButton: React.FC<FormSubmitButtonProps> = ({
   invisible = false,
   ...props
 }) => {
-  const isValid: boolean = useForm((state) => state.isValid);
   const loading: boolean = useForm((state) => state.loading);
+  const isValid: boolean = useForm((state) => state.validateForm(false));
 
   const invisibleClassName: string = css({
     display: 'none'

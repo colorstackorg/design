@@ -100,7 +100,6 @@ export const createFormStore = (options: FormOptions): UseStore<FormState> => {
     return {
       error: '',
       initializeField,
-      isValid: validateForm(false),
       items: {},
       loading: false,
       options: { ...defaultFormOptions, ...options },
