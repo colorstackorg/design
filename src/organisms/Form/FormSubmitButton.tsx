@@ -11,6 +11,7 @@ const FormSubmitButton: React.FC<FormSubmitButtonProps> = ({
   children,
   className: otherClassName,
   invisible = false,
+  disabled,
   ...props
 }) => {
   const loading: boolean = useForm((state) => state.loading);
@@ -27,7 +28,7 @@ const FormSubmitButton: React.FC<FormSubmitButtonProps> = ({
 
   return (
     <Button
-      disabled={!isValid}
+      disabled={disabled || !isValid}
       loading={loading}
       className={className}
       type="submit"
