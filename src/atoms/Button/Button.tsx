@@ -20,6 +20,7 @@ const baseButtonClassName: string = css({
   paddingLeft: Size.SM,
   paddingRight: Size.SM,
   paddingTop: Size.SS,
+  textTransform: 'uppercase',
   transition: 'box-shadow 0.1s ease-in-out'
 });
 
@@ -28,8 +29,7 @@ const primaryButtonClassName: string = css({
   ':disabled': { backgroundColor: Color.GRAY_500 },
   ':not(:active):focus-visible': { boxShadow: `0px 0px 4px ${Color.TEAL}` },
   backgroundColor: Color.TEAL,
-  color: Color.WHITE,
-  textTransform: 'uppercase'
+  color: Color.WHITE
 });
 
 const secondaryButtonClassName: string = css({
@@ -41,8 +41,7 @@ const secondaryButtonClassName: string = css({
   ':not(:active):focus-visible': { boxShadow: `0px 0px 4px ${Color.TEAL}` },
   backgroundColor: Color.WHITE,
   border: `1px ${Color.TEAL} solid`,
-  color: Color.TEAL,
-  textTransform: 'uppercase'
+  color: Color.TEAL
 });
 
 const tertiaryButtonClassName: string = css({
