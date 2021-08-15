@@ -22,7 +22,9 @@ const bottomClassName: string = css({
 
 const regularClassName: string = css({
   borderRadius: Size.SM,
+  height: 'fit-content',
   left: '50%',
+  maxHeight: '90vh',
   maxWidth: 600,
   top: '50%',
   transform: 'translate(-50%, -50%)',
@@ -44,11 +46,11 @@ const ModalContainer: React.FC<{ options?: ModalOptions }> = ({
   return (
     <Transition
       items={show}
-      enter={bottom ? { bottom: '0vh' } : { height: '90vh', opacity: 1 }}
-      from={bottom ? { bottom: '-100vh' } : { height: '0vh', opacity: 0 }}
-      leave={bottom ? { bottom: '-100vh' } : { height: '0vh', opacity: 0 }}
+      enter={bottom ? { bottom: '0vh' } : { marginTop: 0, opacity: 1 }}
+      from={bottom ? { bottom: '-100vh' } : { marginTop: 200, opacity: 0 }}
+      leave={bottom ? { bottom: '-100vh' } : { marginTop: 200, opacity: 0 }}
     >
-      {(style, item) => {
+      {(style, item: boolean) => {
         if (!item) return null;
 
         return (

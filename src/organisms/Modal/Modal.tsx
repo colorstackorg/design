@@ -33,16 +33,13 @@ const Modal: React.FC<ModalProps> = ({
 
   const baseClassName: string = css({
     backgroundColor: Color.WHITE,
+    boxSizing: 'border-box',
     height: '100%',
-    paddingBottom: Size.MD,
-    paddingTop: Size.MD,
+    padding: Size.MD,
     position: 'relative',
     width: '100%',
     zIndex: 12,
-    [MediaQuery.MOBILE]: {
-      paddingBottom: Size.SM,
-      paddingTop: Size.SM
-    }
+    [MediaQuery.MOBILE]: { padding: Size.SM }
   });
 
   const className: string = cx(baseClassName, otherClassName);

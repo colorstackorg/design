@@ -10,9 +10,8 @@ const ModalCloseButton: React.FC = () => {
     backgroundColor: 'inherit',
     cursor: 'pointer',
     display: 'block',
-    marginBottom: Size.MD,
-    marginLeft: 'auto',
-    marginRight: Size.SM
+    marginBottom: Size.SM,
+    marginLeft: 'auto'
   });
 
   return (
