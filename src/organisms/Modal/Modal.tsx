@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({
   ...props
 }) => {
   // Disables scrolling on the body when the modal is showing.
-  useLockBodyScroll();
+  // useLockBodyScroll();
 
   // We only execute this once (notice that we're not using the useBreakpoint)
   // hook b/c we don't want to change the modal animations after it's already
