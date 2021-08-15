@@ -19,30 +19,26 @@ const FormFieldContent: React.FC<FormFieldProps> = ({
   name,
   required,
   validation,
-  value: controlledValue
+  value
 }) => {
   const initializeField = useForm((state) => state.initializeField);
   const setValue = useForm((state) => state.setValue);
 
   const ref: React.MutableRefObject<HTMLDivElement> = useRef(null);
 
-  const controlled: boolean = Utils.isDefined(controlledValue);
-
   useEffect(() => {
     initializeField(name, {
-      controlled,
       label,
       required,
       validation
     });
-  }, [controlled, initializeField, name, label, required, validation]);
+  }, [initializeField, name, label, required, validation]);
 
   useEffect(() => {
-    // If the name is there and the value is being controlled by another
-    // piece of state (outside of the Form state), then set the value in the
-    // Form state (effectively "syncs") the state.
-    if (name && controlled) setValue(name, controlledValue);
-  }, [controlled, controlledValue, name, setValue]);
+    // If the name is there and there is a value provided, then update the
+    // form's state with that value whenever it changes.
+    if (name) setValue(name, value);
+  }, [name, setValue, value]);
 
   const className: string = cx(otherClassName);
 

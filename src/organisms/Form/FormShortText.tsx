@@ -18,7 +18,6 @@ const FormShortTextContent: React.FC<FormShortTextProps> = ({
 }) => {
   const setValue = useForm((state) => state.setValue);
 
-  const controlled: boolean = useFormField((state) => state.controlled);
   const error: string = useFormField((state) => state.error);
   const name: string = useFormField((state) => state.name);
   const value: string = useFormField((state) => state.value);
@@ -28,16 +27,7 @@ const FormShortTextContent: React.FC<FormShortTextProps> = ({
   });
 
   const onInputChange = (updatedValue: string): void => {
-    // If there's a controlled value, then we don't actually need to update
-    // the <Input /> value ourselves, it will automatically be handled.
-    if (controlled && !onChange) {
-      throw new Error(
-        'If you supply a controlledValue, you must implement onChange as well!'
-      );
-    }
-
-    // If it's a controlled value, then update state with onChange().
-    if (controlled) onChange(updatedValue);
+    if (onChange) onChange(updatedValue);
     setValue(name, updatedValue);
   };
 
