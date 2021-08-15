@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Meta, Story } from '@storybook/react';
+import { ArgTypes, Meta, Story } from '@storybook/react';
 import Button from '../../atoms/Button';
 import Text from '../../atoms/Text/index';
 import Modal from './Modal';
 import ModalUtils from './Modal.utils';
 import ModalPortal from './ModalPortal';
 
-export const ModalStory: Story = () => {
+export const ModalStory: Story = ({ bottom }) => {
   const onClick = (): void => {
     ModalUtils.showModal(
-      <Modal>
+      <Modal options={{ bottom }}>
         <Text variant="title">Hello World!</Text>
         <Text variant="title">Hello World!</Text>
         <Text variant="title">Hello World!</Text>
@@ -29,6 +29,15 @@ export const ModalStory: Story = () => {
 
 ModalStory.storyName = 'Modal';
 
+const modalArgTypes: ArgTypes = {
+  bottom: {
+    control: { type: 'inline-radio' },
+    defaultValue: false,
+    options: [false, true]
+  }
+};
+
 export default {
+  argTypes: modalArgTypes,
   title: 'Components/Modal'
 } as Meta;
