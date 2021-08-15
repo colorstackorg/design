@@ -2,7 +2,6 @@ import React from 'react';
 import { X as XIcon } from 'react-feather';
 
 import { css } from '@emotion/css';
-import { Size } from '../../utils/constants';
 import ModalUtils from './Modal.utils';
 
 const ModalCloseButton: React.FC = () => {
@@ -10,7 +9,6 @@ const ModalCloseButton: React.FC = () => {
     backgroundColor: 'inherit',
     cursor: 'pointer',
     display: 'block',
-    marginBottom: Size.SM,
     marginLeft: 'auto'
   });
 
