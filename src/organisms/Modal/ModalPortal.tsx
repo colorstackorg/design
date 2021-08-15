@@ -2,7 +2,6 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 
 import useModal from './Modal.state';
-import ModalContainer from './ModalContainer';
 import ModalShader from './ModalShader';
 
 const ModalPortal: React.FC = () => {
@@ -11,7 +10,7 @@ const ModalPortal: React.FC = () => {
   return createPortal(
     <>
       <ModalShader />
-      <ModalContainer>{content}</ModalContainer>
+      {content}
     </>,
     document.body
   );

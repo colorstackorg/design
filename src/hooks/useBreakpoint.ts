@@ -8,6 +8,17 @@ import Utils from '../utils/Utils';
 // 4: Monitor
 export type Breakpoint = 1 | 2 | 3 | 4;
 
+export const getBreakpoint = (): Breakpoint => {
+  const { innerWidth: width } = window;
+
+  return Utils.takeFirst(
+    [width > 1440, 4],
+    [width <= 1440 && width > 1024, 3],
+    [width <= 1024 && width >= 569, 2],
+    1
+  );
+};
+
 /**
  * Returns the appropriate breakpoint based on window width.
  *
@@ -17,18 +28,11 @@ export type Breakpoint = 1 | 2 | 3 | 4;
  * @example useBreakpoint() => 4 (Monitor)
  */
 const useBreakpoint = (): Breakpoint => {
-  const [breakpoint, setBreakpoint] = useState<Breakpoint>(null);
+  const initialBreakpoint: Breakpoint = getBreakpoint();
+  const [breakpoint, setBreakpoint] = useState<Breakpoint>(initialBreakpoint);
 
   const onWindowResize = (): void => {
-    const { innerWidth } = window;
-
-    const updatedBreakpoint: Breakpoint = Utils.takeFirst(
-      [innerWidth > 1440, 4],
-      [innerWidth <= 1440 && innerWidth > 1024, 3],
-      [innerWidth <= 1024 && innerWidth >= 569, 2],
-      1
-    );
-
+    const updatedBreakpoint: Breakpoint = getBreakpoint();
     setBreakpoint(updatedBreakpoint);
   };
 

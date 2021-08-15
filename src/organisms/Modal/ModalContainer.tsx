@@ -2,9 +2,9 @@ import React from 'react';
 import { animated, Transition } from 'react-spring';
 
 import { css, cx } from '@emotion/css';
-import useBreakpoint from '../../hooks/useBreakpoint';
 import { Size } from '../../utils/constants';
 import useModal from './Modal.state';
+import { ModalOptions } from './Modal.types';
 
 const baseClassName: string = css({
   overflow: 'scroll',
@@ -23,13 +23,18 @@ const bottomClassName: string = css({
 const regularClassName: string = css({
   borderRadius: Size.SM,
   left: '50%',
+  maxWidth: 600,
   top: '50%',
-  transform: 'translate(-50%, -50%)'
+  transform: 'translate(-50%, -50%)',
+  width: '90vw'
 });
 
-const ModalContainer: React.FC = ({ children }) => {
+const ModalContainer: React.FC<{ options?: ModalOptions }> = ({
+  children,
+  options
+}) => {
   const show: boolean = useModal((state) => state.isOpen);
-  const bottom: boolean = useModal((state) => state.options?.bottom);
+  const { bottom } = options ?? {};
 
   const className: string = cx(baseClassName, {
     [bottomClassName]: bottom,
@@ -39,21 +44,9 @@ const ModalContainer: React.FC = ({ children }) => {
   return (
     <Transition
       items={show}
-      enter={
-        bottom
-          ? { bottom: '0vh' }
-          : { height: '75vh', opacity: 1, width: '50vw' }
-      }
-      from={
-        bottom
-          ? { bottom: '-100vh' }
-          : { height: '0vh', opacity: 0, width: '0vw' }
-      }
-      leave={
-        bottom
-          ? { bottom: '-100vh' }
-          : { height: '0vh', opacity: 0, width: '0vw' }
-      }
+      enter={bottom ? { bottom: '0vh' } : { height: '90vh', opacity: 1 }}
+      from={bottom ? { bottom: '-100vh' } : { height: '0vh', opacity: 0 }}
+      leave={bottom ? { bottom: '-100vh' } : { height: '0vh', opacity: 0 }}
     >
       {(style, item) => {
         if (!item) return null;
