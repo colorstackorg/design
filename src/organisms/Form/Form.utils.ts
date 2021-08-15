@@ -20,15 +20,15 @@ const validateFormField = ({
   // If validation is false, don't validate bro!
   if (validation === false) return null;
 
-  if (required && !value && !validation) {
+  if (required && !value) {
     return 'Must not be empty.';
   }
 
-  if (validation === 'email') {
+  if (value && validation === 'email') {
     return validator.isEmail(value) ? null : 'Must be a valid email address.';
   }
 
-  if (validation === 'url') {
+  if (value && validation === 'url') {
     return validator.isURL(value) ? null : 'Must be a valid URL.';
   }
 
